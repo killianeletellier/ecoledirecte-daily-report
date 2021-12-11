@@ -119,12 +119,12 @@ async function script(username, password, mail) {
 	}
 
 	let transporter = nodemailer.createTransport({
-		host: "mail.mailo.com",
+		host: process.env.mailHost,
 		port: 465,
 		secure: true,
 		auth: {
-			user: "***REMOVED***",
-			pass: "***REMOVED***"
+			user: process.env.mailUser,
+			pass: process.env.mailPassword
 		},
 	});
 
